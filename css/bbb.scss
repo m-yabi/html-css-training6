@@ -96,24 +96,27 @@
   position: relative;
 }
 .btn1 {
+  display: block;
+  position: relative;
   color: white;
   font-size: 24px;
-}
-.btn1::after {
-  content: "";
-  width: 16px;
-  height: 16px;
-  border-top: 3px solid white;
-  border-right: 3px solid white;
-  transform: rotate(45deg);
-  position: absolute;
-  top: 190px;
-  right: 30px;
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.1, 1.1);
+  }
+  &::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: rotate(45deg) translateY(-50%);
+  }
 }
 
-.btn1 :hover {
-  transform: scale(1.1, 1.1);
-}
 .reason__wrapper {
   margin-top: 120px;
 }

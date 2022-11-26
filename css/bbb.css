@@ -171,24 +171,25 @@ img {
 }
 
 .btn1 {
+  display: block;
+  position: relative;
   color: white;
   font-size: 24px;
+  transition: 0.3s;
 }
-
+.btn1:hover {
+  transform: scale(1.1, 1.1);
+}
 .btn1::after {
   content: "";
   width: 16px;
   height: 16px;
   border-top: 3px solid white;
   border-right: 3px solid white;
-  transform: rotate(45deg);
   position: absolute;
-  top: 190px;
+  top: 50%;
   right: 30px;
-}
-
-.btn1 :hover {
-  transform: scale(1.1, 1.1);
+  transform: rotate(45deg) translateY(-50%);
 }
 
 .reason__wrapper {
