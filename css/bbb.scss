@@ -1,1 +1,149 @@
 @import "_settings.scss";
+.header__logo {
+  max-width: 100px;
+  margin-top: 50px;
+  margin-left: 40px;
+}
+.openbtn1 {
+  position: fixed; /*fixedを設定して固定*/
+  z-index: 999; /*最前面へ*/
+  top: 0px; /*位置指定*/
+  right: 0px; /*位置指定*/
+  background: #ff2a2a;
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+}
+
+/*ボタン内側*/
+.openbtn1 span {
+  display: inline-block;
+  transition: all 0.4s; /*アニメーションの設定*/
+  position: absolute;
+  left: 25px;
+  height: 2px;
+  background: #fff;
+  width: 50%;
+}
+
+.openbtn1 span:nth-of-type(1) {
+  top: 36px;
+}
+
+.openbtn1 span:nth-of-type(2) {
+  top: 50px;
+}
+
+.openbtn1 span:nth-of-type(3) {
+  top: 64px;
+}
+
+/*activeクラスが付与されると線が回転して×に*/
+
+.openbtn1.active span:nth-of-type(1) {
+  top: 25px;
+  left: 25px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+.openbtn1.active span:nth-of-type(2) {
+  opacity: 0; /*真ん中の線は透過*/
+}
+
+.openbtn1.active span:nth-of-type(3) {
+  top: 64px;
+  left: 25px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+.header__menu {
+  display: none;
+}
+.main__visual {
+  max-width: 1037px;
+  height: 720px;
+  margin-left: 363px;
+  position: relative;
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.main__visual-text {
+  position: absolute;
+  top: 380px;
+  left: 135px;
+  p {
+    font-size: 46px;
+    font-weight: bold;
+    text-shadow: 0px 4px 7px white;
+    opacity: 0.9;
+  }
+}
+.main__visual-btn {
+  margin-top: 30px;
+  max-width: 479px;
+  height: 67px;
+  background-color: #ff0033;
+  border-bottom: 10px solid #7a051c;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0px;
+  transition: 0.3s;
+  position: relative;
+}
+.btn1 {
+  color: white;
+  font-size: 24px;
+}
+.btn1::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-top: 3px solid white;
+  border-right: 3px solid white;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 190px;
+  right: 30px;
+}
+
+.btn1 :hover {
+  transform: scale(1.1, 1.1);
+}
+.reason__wrapper {
+  margin-top: 120px;
+}
+.wrapper__title {
+  font-size: 36px;
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+}
+.wrapper-title {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.wrapper__title::before {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  bottom: -15px; /*下線の上下の位置*/
+  left: 50%;
+  width: 100px; /*下線の幅*/
+  height: 3px; /*下線の太さ*/
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translate(-50%); /*位置の調整*/
+  background-color: #333333; /*下線の色*/
+}
+.reason__box {
+  display: flex;
+}
+.reason__list {
+  display: flex;
+}
