@@ -14,9 +14,8 @@
   width: 100px;
   height: 100px;
 }
-
 /*ボタン内側*/
-.openbtn1 span {
+&span {
   display: inline-block;
   transition: all 0.4s; /*アニメーションの設定*/
   position: absolute;
@@ -25,16 +24,13 @@
   background: #fff;
   width: 50%;
 }
-
-.openbtn1 span:nth-of-type(1) {
+&span:nth-of-type(1) {
   top: 36px;
 }
-
-.openbtn1 span:nth-of-type(2) {
+&span:nth-of-type(2) {
   top: 50px;
 }
-
-.openbtn1 span:nth-of-type(3) {
+&span:nth-of-type(3) {
   top: 64px;
 }
 
@@ -94,6 +90,9 @@
   padding: 15px 0px;
   transition: 0.3s;
   position: relative;
+  &:hover {
+    transform: scale(1.1, 1.1);
+  }
 }
 .btn1 {
   display: block;
@@ -101,9 +100,6 @@
   color: white;
   font-size: 24px;
   transition: 0.3s;
-  &:hover {
-    transform: scale(1.1, 1.1);
-  }
   &::after {
     content: "";
     width: 16px;
@@ -112,7 +108,7 @@
     border-right: 3px solid white;
     position: absolute;
     top: 50%;
-    right: 30px;
+    right: -80px;
     transform: rotate(45deg) translateY(-50%);
   }
 }

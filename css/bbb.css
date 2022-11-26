@@ -169,6 +169,9 @@ img {
   transition: 0.3s;
   position: relative;
 }
+.main__visual-btn:hover {
+  transform: scale(1.1, 1.1);
+}
 
 .btn1 {
   display: block;
@@ -176,9 +179,6 @@ img {
   color: white;
   font-size: 24px;
   transition: 0.3s;
-}
-.btn1:hover {
-  transform: scale(1.1, 1.1);
 }
 .btn1::after {
   content: "";
@@ -188,7 +188,7 @@ img {
   border-right: 3px solid white;
   position: absolute;
   top: 50%;
-  right: 30px;
+  right: -80px;
   transform: rotate(45deg) translateY(-50%);
 }
 
