@@ -377,4 +377,42 @@ img {
   max-width: 280px;
   text-align: left;
   margin: auto;
+}
+
+.bottom__wrapper {
+  text-align: center;
+  margin-top: 120px;
+}
+
+.bottom__wrapper-title {
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 3.2px;
+}
+
+.bottom__wrapper-text {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.bottom__wrapper-btn {
+  max-width: 860px;
+  font-size: 28px;
+  font-weight: bold;
+  margin: auto;
+}
+
+.bottom__wrapper__btn {
+  padding: 25px 293px;
+  text-decoration: none;
+  color: #fffffc;
+  background-color: #ff2a2a;
+  border-radius: 40px;
+  transition: 0.2s;
+}
+.bottom__wrapper__btn:hover {
+  font-weight: bold;
+  border: 3px solid #ff2a2a;
+  color: #ff2a2a;
+  background-color: #fffffc;
 }/*# sourceMappingURL=bbb.css.map */
