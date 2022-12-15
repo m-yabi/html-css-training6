@@ -4,8 +4,14 @@ body {
 }
 .header__logo {
   max-width: 100px;
-  margin-top: 45px;
-  margin-left: 40px;
+  @include pc {
+    margin-top: 45px;
+    margin-left: 40px;
+  }
+  @include sp {
+    margin-top: 27px;
+    margin-left: 27px;
+  }
 }
 .openbtn1 {
   position: fixed; /*fixedを設定して固定*/
@@ -14,33 +20,60 @@ body {
   right: 0px; /*位置指定*/
   background: #ff2a2a;
   cursor: pointer;
-  width: 100px;
-  height: 100px;
+  @include pc {
+    width: 100px;
+    height: 100px;
+  }
+  @include sp {
+    width: 75px;
+    height: 75px;
+  }
+
   /*ボタン内側*/
   span {
     display: inline-block;
     transition: all 0.4s; /*アニメーションの設定*/
     position: absolute;
-    left: 25px;
-    height: 2px;
     background: #fff;
     width: 50%;
-    &:nth-of-type(1) {
-      top: 36px;
+    height: 2px;
+    @include pc {
+      left: 25px;
+      &:nth-of-type(1) {
+        top: 36px;
+      }
+      &:nth-of-type(2) {
+        top: 50px;
+      }
+      &:nth-of-type(3) {
+        top: 64px;
+      }
     }
-    &:nth-of-type(2) {
-      top: 50px;
-    }
-    &:nth-of-type(3) {
-      top: 64px;
+    @include sp {
+      left: 17.5px;
+      &:nth-of-type(1) {
+        top: 27px;
+      }
+      &:nth-of-type(2) {
+        top: 38px;
+      }
+      &:nth-of-type(3) {
+        top: 50px;
+      }
     }
   }
 }
 /*activeクラスが付与されると線が回転して×に*/
 
 .openbtn1.active span:nth-of-type(1) {
-  top: 50px;
-  left: 25px;
+  @include pc {
+    top: 50px;
+    left: 25px;
+  }
+  @include sp {
+    top: 35px;
+    left: 17.5px;
+  }
   transform: translateY(1px) rotate(-45deg);
   width: 50%;
 }
@@ -50,8 +83,14 @@ body {
 }
 
 .openbtn1.active span:nth-of-type(3) {
-  top: 50px;
-  left: 25px;
+  @include pc {
+    top: 50px;
+    left: 25px;
+  }
+  @include sp {
+    top: 37px;
+    left: 17.5px;
+  }
   transform: translateY(-1px) rotate(45deg);
   width: 50%;
 }
@@ -76,9 +115,14 @@ body {
   /*ナビゲーション天地中央揃え*/
   position: absolute;
   z-index: 999;
-  top: 110px;
   left: 50%;
   transform: translate(-50%, -50%);
+  @include pc {
+    top: 110px;
+  }
+  @include sp {
+    top: 170px;
+  }
   a {
     color: #ffffff;
     text-decoration: none;
@@ -94,18 +138,24 @@ body {
   text-align: center;
 }
 .btn a {
-  padding: 15px 50px;
   border: 1px solid #ffffff;
   font-weight: bold;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 250px;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.2s;
   color: #ffffff;
+  @include pc {
+    top: 250px;
+    padding: 15px 50px;
+  }
+  @include sp {
+    top: 300px;
+    padding: 15px 41px;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -130,14 +180,23 @@ body {
   }
 }
 .swiper {
-  height: 720px;
-  margin-left: 363px !important;
-  position: relative;
   border: 1px solid #ffffff !important;
+  @include pc {
+    position: relative;
+    height: 720px;
+    margin-left: 363px !important;
+  }
+  @include sp {
+    margin-top: 18px;
+    width: 100%;
+    height: 300px;
+  }
   img {
     height: 100%;
     object-fit: cover;
-    position: absolute;
+    @include pc {
+      position: absolute;
+    }
   }
   &::after {
     position: absolute;
@@ -146,26 +205,38 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    box-shadow: 0 0 10px 15px #ffffff inset;
     z-index: 3;
+    @include pc {
+      box-shadow: 0 0 10px 15px #ffffff inset;
+    }
+    @include sp {
+      box-shadow: 0 0 15px 15px #ffffff inset;
+    }
   }
 }
 .main__visual-text {
-  position: absolute;
-  z-index: 2;
-  top: 380px;
-  left: 135px;
-  p {
-    font-size: 46px;
-    font-weight: bold;
-    text-shadow: 0px 4px 7px white;
-    opacity: 0.9;
+  @include pc {
+    position: absolute;
+    z-index: 2;
+    top: 380px;
+    left: 135px;
+    p {
+      font-size: 46px;
+      font-weight: bold;
+      text-shadow: 0px 4px 7px white;
+      opacity: 0.9;
+    }
+  }
+  @include sp {
+    margin-top: 10px;
+    margin-left: 16px;
+    p {
+      font-size: 28px;
+      font-weight: bold;
+    }
   }
 }
 .main__visual-btn {
-  margin-top: 30px;
-  max-width: 479px;
-  height: 67px;
   background-color: #ff0033;
   border-bottom: 5px solid #7a051c;
   border-radius: 10px;
@@ -177,6 +248,14 @@ body {
   position: relative;
   &:hover {
     transform: scale(1.1, 1.1);
+  }
+  @include pc {
+    margin-top: 30px;
+    max-width: 479px;
+    height: 67px;
+  }
+  @include sp {
+    margin: 10px 16px;
   }
 }
 .btn1 {
@@ -193,8 +272,13 @@ body {
     border-right: 3px solid white;
     position: absolute;
     top: 50%;
-    right: -80px;
     transform: rotate(45deg) translateY(-50%);
+    @include pc {
+      right: -80px;
+    }
+    @include sp {
+      right: -50px;
+    }
   }
 }
 
@@ -202,14 +286,24 @@ body {
   margin-top: 120px;
 }
 .wrapper__title {
-  font-size: 36px;
   font-weight: bold;
   display: inline-block;
   position: relative;
+  @include pc {
+    font-size: 36px;
+  }
+  @include sp {
+    font-size: 28px;
+  }
 }
 .wrapper-title {
   text-align: center;
-  margin-bottom: 80px;
+  @include pc {
+    margin-bottom: 80px;
+  }
+  @include sp {
+    margin-bottom: 60px;
+  }
 }
 .wrapper__title::before {
   display: inline-block;
@@ -226,28 +320,49 @@ body {
   background-color: #333333; /*下線の色*/
 }
 .reason__box {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   background-color: #ff2a2a;
-  height: 600px;
+  @include pc {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 600px;
+  }
+  @include sp {
+    padding: 40px 0px;
+  }
 }
 .reason__list1,
 .reason__list2 {
-  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
-  height: 200px;
+  @include pc {
+    height: 200px;
+    width: 50%;
+  }
+  @include sp {
+    height: 119px;
+  }
 }
 .reason__list1 {
-  margin-top: 80px;
   border-radius: 0px 20px 20px 0px;
+  @include pc {
+    margin-top: 80px;
+  }
+  @include sp {
+    margin-bottom: 40px;
+    margin-right: 16px;
+  }
 }
 .reason__list2 {
-  margin-top: 320px;
   border-radius: 20px 0px 0px 20px;
+  @include pc {
+    margin-top: 320px;
+  }
+  @include sp {
+    margin-left: 16px;
+  }
 }
 .reason__pic {
   height: 60px;
@@ -257,9 +372,14 @@ body {
   }
 }
 .reason__text h4 {
-  font-size: 28px;
   font-weight: bold;
   color: #ff2a2a;
+  @include pc {
+    font-size: 28px;
+  }
+  @include sp {
+    font-size: 24px;
+  }
 }
 .reason__text p {
   font-size: 18px;
@@ -267,28 +387,54 @@ body {
 .voice__wrapper {
   margin-top: 120px;
 }
+.voice__box {
+  @include sp {
+    margin-top: 0px;
+  }
+}
 .student,
 .student1 {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 80px;
+  @include pc {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+  @include sp {
+    flex-direction: column-reverse;
+    margin-bottom: 40px;
+  }
 }
 .student1 {
-  flex-direction: row-reverse;
+  @include pc {
+    flex-direction: row-reverse;
+  }
 }
 .student__pic {
   height: 120px;
   width: 120px;
+  background-color: rgb(212, 208, 208);
+  border-radius: 50%;
+  @include sp {
+    margin: auto;
+  }
   img {
     height: 100%;
+    @include sp {
+      margin-bottom: 10px;
+    }
+  }
+  p {
+    @include sp {
+      text-align: center;
+      font-size: 12px;
+    }
   }
 }
 .student__text {
   position: relative;
   display: inline-block;
-  margin: 1.5em 0 1.5em 15px;
   padding: 20px;
   max-width: 514px;
   color: #555;
@@ -299,26 +445,44 @@ body {
     font-size: 16px;
     letter-spacing: 1.6px;
   }
+  @include pc {
+    margin: 1.5em 0 1.5em 15px;
+  }
+  @include sp {
+    margin: 40px 16px 30px 16px;
+  }
 }
 .student__text :before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: -30px;
-  margin-top: -15px;
   border: 15px solid transparent;
-  border-right: 15px solid #e9f1fb;
+  @include pc {
+    top: 50%;
+    left: -30px;
+    margin-top: -15px;
+    border-right: 15px solid #e9f1fb;
+  }
+  @include sp {
+    top: 100%;
+    left: 45%;
+    border-top: 15px solid #e9f1fb;
+  }
 }
 .student__text1 {
   position: relative;
   display: inline-block;
-  margin: 1.5em 15px 1.5em 0;
   padding: 20px;
   max-width: 514px;
   color: #555;
   font-size: 16px;
   background: #e9f1fb;
   border-radius: 15px;
+  @include pc {
+    margin: 1.5em 15px 1.5em 0;
+  }
+  @include sp {
+    margin: 40px 16px 30px 16px;
+  }
   p {
     font-size: 16px;
     letter-spacing: 1.6px;
@@ -327,11 +491,18 @@ body {
 .student__text1:before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 100%;
-  margin-top: -15px;
   border: 15px solid transparent;
-  border-left: 15px solid #e9f1fb;
+  @include pc {
+    top: 50%;
+    left: 100%;
+    margin-top: -15px;
+    border-left: 15px solid #e9f1fb;
+  }
+  @include sp {
+    top: 100%;
+    left: 45%;
+    border-top: 15px solid #e9f1fb;
+  }
 }
 .overview__wrapper {
   background-image: url(https://code-step.com/demo/html/lp/img/bg.gif);

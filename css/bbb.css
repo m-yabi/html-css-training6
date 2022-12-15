@@ -74,8 +74,18 @@ body {
 
 .header__logo {
   max-width: 100px;
-  margin-top: 45px;
-  margin-left: 40px;
+}
+@media (min-width: 751px) {
+  .header__logo {
+    margin-top: 45px;
+    margin-left: 40px;
+  }
+}
+@media (max-width: 750px) {
+  .header__logo {
+    margin-top: 27px;
+    margin-left: 27px;
+  }
 }
 
 .openbtn1 {
@@ -85,35 +95,73 @@ body {
   right: 0px; /*位置指定*/
   background: #ff2a2a;
   cursor: pointer;
-  width: 100px;
-  height: 100px;
   /*ボタン内側*/
+}
+@media (min-width: 751px) {
+  .openbtn1 {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (max-width: 750px) {
+  .openbtn1 {
+    width: 75px;
+    height: 75px;
+  }
 }
 .openbtn1 span {
   display: inline-block;
   transition: all 0.4s; /*アニメーションの設定*/
   position: absolute;
-  left: 25px;
-  height: 2px;
   background: #fff;
   width: 50%;
+  height: 2px;
 }
-.openbtn1 span:nth-of-type(1) {
-  top: 36px;
+@media (min-width: 751px) {
+  .openbtn1 span {
+    left: 25px;
+  }
+  .openbtn1 span:nth-of-type(1) {
+    top: 36px;
+  }
+  .openbtn1 span:nth-of-type(2) {
+    top: 50px;
+  }
+  .openbtn1 span:nth-of-type(3) {
+    top: 64px;
+  }
 }
-.openbtn1 span:nth-of-type(2) {
-  top: 50px;
-}
-.openbtn1 span:nth-of-type(3) {
-  top: 64px;
+@media (max-width: 750px) {
+  .openbtn1 span {
+    left: 17.5px;
+  }
+  .openbtn1 span:nth-of-type(1) {
+    top: 27px;
+  }
+  .openbtn1 span:nth-of-type(2) {
+    top: 38px;
+  }
+  .openbtn1 span:nth-of-type(3) {
+    top: 50px;
+  }
 }
 
 /*activeクラスが付与されると線が回転して×に*/
 .openbtn1.active span:nth-of-type(1) {
-  top: 50px;
-  left: 25px;
   transform: translateY(1px) rotate(-45deg);
   width: 50%;
+}
+@media (min-width: 751px) {
+  .openbtn1.active span:nth-of-type(1) {
+    top: 50px;
+    left: 25px;
+  }
+}
+@media (max-width: 750px) {
+  .openbtn1.active span:nth-of-type(1) {
+    top: 35px;
+    left: 17.5px;
+  }
 }
 
 .openbtn1.active span:nth-of-type(2) {
@@ -121,10 +169,20 @@ body {
 }
 
 .openbtn1.active span:nth-of-type(3) {
-  top: 50px;
-  left: 25px;
   transform: translateY(-1px) rotate(45deg);
   width: 50%;
+}
+@media (min-width: 751px) {
+  .openbtn1.active span:nth-of-type(3) {
+    top: 50px;
+    left: 25px;
+  }
+}
+@media (max-width: 750px) {
+  .openbtn1.active span:nth-of-type(3) {
+    top: 37px;
+    left: 17.5px;
+  }
 }
 
 #header__menu {
@@ -150,9 +208,18 @@ body {
   /*ナビゲーション天地中央揃え*/
   position: absolute;
   z-index: 999;
-  top: 110px;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+@media (min-width: 751px) {
+  .menu__items {
+    top: 110px;
+  }
+}
+@media (max-width: 750px) {
+  .menu__items {
+    top: 170px;
+  }
 }
 .menu__items a {
   color: #ffffff;
@@ -170,18 +237,28 @@ body {
 }
 
 .btn a {
-  padding: 15px 50px;
   border: 1px solid #ffffff;
   font-weight: bold;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 250px;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.2s;
   color: #ffffff;
+}
+@media (min-width: 751px) {
+  .btn a {
+    top: 250px;
+    padding: 15px 50px;
+  }
+}
+@media (max-width: 750px) {
+  .btn a {
+    top: 300px;
+    padding: 15px 41px;
+  }
 }
 .btn a::before {
   content: "";
@@ -207,16 +284,31 @@ body {
 }
 
 .swiper {
-  height: 720px;
-  margin-left: 363px !important;
-  position: relative;
   border: 1px solid #ffffff !important;
+}
+@media (min-width: 751px) {
+  .swiper {
+    position: relative;
+    height: 720px;
+    margin-left: 363px !important;
+  }
+}
+@media (max-width: 750px) {
+  .swiper {
+    margin-top: 18px;
+    width: 100%;
+    height: 300px;
+  }
 }
 .swiper img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  position: absolute;
+}
+@media (min-width: 751px) {
+  .swiper img {
+    position: absolute;
+  }
 }
 .swiper::after {
   position: absolute;
@@ -225,27 +317,45 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  box-shadow: 0 0 10px 15px #ffffff inset;
   z-index: 3;
 }
-
-.main__visual-text {
-  position: absolute;
-  z-index: 2;
-  top: 380px;
-  left: 135px;
+@media (min-width: 751px) {
+  .swiper::after {
+    box-shadow: 0 0 10px 15px #ffffff inset;
+  }
 }
-.main__visual-text p {
-  font-size: 46px;
-  font-weight: bold;
-  text-shadow: 0px 4px 7px white;
-  opacity: 0.9;
+@media (max-width: 750px) {
+  .swiper::after {
+    box-shadow: 0 0 15px 15px #ffffff inset;
+  }
+}
+
+@media (min-width: 751px) {
+  .main__visual-text {
+    position: absolute;
+    z-index: 2;
+    top: 380px;
+    left: 135px;
+  }
+  .main__visual-text p {
+    font-size: 46px;
+    font-weight: bold;
+    text-shadow: 0px 4px 7px white;
+    opacity: 0.9;
+  }
+}
+@media (max-width: 750px) {
+  .main__visual-text {
+    margin-top: 10px;
+    margin-left: 16px;
+  }
+  .main__visual-text p {
+    font-size: 28px;
+    font-weight: bold;
+  }
 }
 
 .main__visual-btn {
-  margin-top: 30px;
-  max-width: 479px;
-  height: 67px;
   background-color: #ff0033;
   border-bottom: 5px solid #7a051c;
   border-radius: 10px;
@@ -258,6 +368,18 @@ body {
 }
 .main__visual-btn:hover {
   transform: scale(1.1, 1.1);
+}
+@media (min-width: 751px) {
+  .main__visual-btn {
+    margin-top: 30px;
+    max-width: 479px;
+    height: 67px;
+  }
+}
+@media (max-width: 750px) {
+  .main__visual-btn {
+    margin: 10px 16px;
+  }
 }
 
 .btn1 {
@@ -275,8 +397,17 @@ body {
   border-right: 3px solid white;
   position: absolute;
   top: 50%;
-  right: -80px;
   transform: rotate(45deg) translateY(-50%);
+}
+@media (min-width: 751px) {
+  .btn1::after {
+    right: -80px;
+  }
+}
+@media (max-width: 750px) {
+  .btn1::after {
+    right: -50px;
+  }
 }
 
 .reason__wrapper {
@@ -284,15 +415,33 @@ body {
 }
 
 .wrapper__title {
-  font-size: 36px;
   font-weight: bold;
   display: inline-block;
   position: relative;
 }
+@media (min-width: 751px) {
+  .wrapper__title {
+    font-size: 36px;
+  }
+}
+@media (max-width: 750px) {
+  .wrapper__title {
+    font-size: 28px;
+  }
+}
 
 .wrapper-title {
   text-align: center;
-  margin-bottom: 80px;
+}
+@media (min-width: 751px) {
+  .wrapper-title {
+    margin-bottom: 80px;
+  }
+}
+@media (max-width: 750px) {
+  .wrapper-title {
+    margin-bottom: 60px;
+  }
 }
 
 .wrapper__title::before {
@@ -308,31 +457,70 @@ body {
 }
 
 .reason__box {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   background-color: #ff2a2a;
-  height: 600px;
+}
+@media (min-width: 751px) {
+  .reason__box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 600px;
+  }
+}
+@media (max-width: 750px) {
+  .reason__box {
+    padding: 40px 0px;
+  }
 }
 
 .reason__list1,
 .reason__list2 {
-  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
-  height: 200px;
+}
+@media (min-width: 751px) {
+  .reason__list1,
+.reason__list2 {
+    height: 200px;
+    width: 50%;
+  }
+}
+@media (max-width: 750px) {
+  .reason__list1,
+.reason__list2 {
+    height: 119px;
+  }
 }
 
 .reason__list1 {
-  margin-top: 80px;
   border-radius: 0px 20px 20px 0px;
+}
+@media (min-width: 751px) {
+  .reason__list1 {
+    margin-top: 80px;
+  }
+}
+@media (max-width: 750px) {
+  .reason__list1 {
+    margin-bottom: 40px;
+    margin-right: 16px;
+  }
 }
 
 .reason__list2 {
-  margin-top: 320px;
   border-radius: 20px 0px 0px 20px;
+}
+@media (min-width: 751px) {
+  .reason__list2 {
+    margin-top: 320px;
+  }
+}
+@media (max-width: 750px) {
+  .reason__list2 {
+    margin-left: 16px;
+  }
 }
 
 .reason__pic {
@@ -344,9 +532,18 @@ body {
 }
 
 .reason__text h4 {
-  font-size: 28px;
   font-weight: bold;
   color: #ff2a2a;
+}
+@media (min-width: 751px) {
+  .reason__text h4 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 750px) {
+  .reason__text h4 {
+    font-size: 24px;
+  }
 }
 
 .reason__text p {
@@ -357,31 +554,68 @@ body {
   margin-top: 120px;
 }
 
+@media (max-width: 750px) {
+  .voice__box {
+    margin-top: 0px;
+  }
+}
+
 .student,
 .student1 {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 80px;
+}
+@media (min-width: 751px) {
+  .student,
+.student1 {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+}
+@media (max-width: 750px) {
+  .student,
+.student1 {
+    flex-direction: column-reverse;
+    margin-bottom: 40px;
+  }
 }
 
-.student1 {
-  flex-direction: row-reverse;
+@media (min-width: 751px) {
+  .student1 {
+    flex-direction: row-reverse;
+  }
 }
 
 .student__pic {
   height: 120px;
   width: 120px;
+  background-color: rgb(212, 208, 208);
+  border-radius: 50%;
+}
+@media (max-width: 750px) {
+  .student__pic {
+    margin: auto;
+  }
 }
 .student__pic img {
   height: 100%;
+}
+@media (max-width: 750px) {
+  .student__pic img {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 750px) {
+  .student__pic p {
+    text-align: center;
+    font-size: 12px;
+  }
 }
 
 .student__text {
   position: relative;
   display: inline-block;
-  margin: 1.5em 0 1.5em 15px;
   padding: 20px;
   max-width: 514px;
   color: #555;
@@ -393,27 +627,57 @@ body {
   font-size: 16px;
   letter-spacing: 1.6px;
 }
+@media (min-width: 751px) {
+  .student__text {
+    margin: 1.5em 0 1.5em 15px;
+  }
+}
+@media (max-width: 750px) {
+  .student__text {
+    margin: 40px 16px 30px 16px;
+  }
+}
 
 .student__text :before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: -30px;
-  margin-top: -15px;
   border: 15px solid transparent;
-  border-right: 15px solid #e9f1fb;
+}
+@media (min-width: 751px) {
+  .student__text :before {
+    top: 50%;
+    left: -30px;
+    margin-top: -15px;
+    border-right: 15px solid #e9f1fb;
+  }
+}
+@media (max-width: 750px) {
+  .student__text :before {
+    top: 100%;
+    left: 45%;
+    border-top: 15px solid #e9f1fb;
+  }
 }
 
 .student__text1 {
   position: relative;
   display: inline-block;
-  margin: 1.5em 15px 1.5em 0;
   padding: 20px;
   max-width: 514px;
   color: #555;
   font-size: 16px;
   background: #e9f1fb;
   border-radius: 15px;
+}
+@media (min-width: 751px) {
+  .student__text1 {
+    margin: 1.5em 15px 1.5em 0;
+  }
+}
+@media (max-width: 750px) {
+  .student__text1 {
+    margin: 40px 16px 30px 16px;
+  }
 }
 .student__text1 p {
   font-size: 16px;
@@ -423,11 +687,22 @@ body {
 .student__text1:before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 100%;
-  margin-top: -15px;
   border: 15px solid transparent;
-  border-left: 15px solid #e9f1fb;
+}
+@media (min-width: 751px) {
+  .student__text1:before {
+    top: 50%;
+    left: 100%;
+    margin-top: -15px;
+    border-left: 15px solid #e9f1fb;
+  }
+}
+@media (max-width: 750px) {
+  .student__text1:before {
+    top: 100%;
+    left: 45%;
+    border-top: 15px solid #e9f1fb;
+  }
 }
 
 .overview__wrapper {
