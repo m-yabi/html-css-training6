@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/bbb.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <title>Document</title>
   </head>
   <body>
@@ -12,22 +13,24 @@
       <h1 class="header__logo">
         <a href="#"> <img src="img/logo-r (1).svg" /></a>
       </h1>
+      <div class="openbtn1"><span></span><span></span><span></span></div>
       <nav class="header__menu" id="header__menu">
         <ul class="menu__items">
           <li class="menu__list"><a href="#reason">BBBが選ばれる理由</a></li>
           <li class="menu__list"><a href="#voice"></a></li>
           <li class="menu__list"><a href="#overview">スクールの概要</a></li>
         </ul>
-        <div class="btn">無料体験に申し込む</div>
+        <div class="btn"><a href="#">無料体験に申し込む</a></div>
       </nav>
-      <div class="openbtn1"><span></span><span></span><span></span></div>
     </header>
     <main>
-      <div class="main__visual">
-        <img src="img/mainvisual1 (2).jpg" alt="画像1" class="active" />
-        <!-- <img src="img/mainvisual2 (1).jpg" alt="画像2" />
-        <img src="img/mainvisual3.jpg" alt="画像3" /> -->
-      </div>
+      <ul class="main__visual">
+        <li>
+          <img class="slide" src="img/mainvisual1 (2).jpg" alt="画像1" />
+        </li>
+        <li><img class="slide" src="img/mainvisual2 (1).jpg" alt="画像2" /></li>
+        <li><img class="slide" src="img/mainvisual3.jpg" alt="画像3" /></li>
+      </ul>
       <div class="main__visual-text">
         <p>話して学ぼう！</p>
         <p>BBB英会話スクール</p>
@@ -191,5 +194,6 @@
         <small>© BBB English School</small>
       </div>
     </footer>
+    <script src="./js/script.js"></script>
   </body>
 </html>
