@@ -57,7 +57,7 @@ body {
 }
 #header__menu {
   position: fixed;
-  z-index: 1;
+  z-index: 5;
   opacity: 0; /*はじめは透過0*/
   visibility: hidden;
   /*ナビの位置と形状*/
@@ -76,7 +76,7 @@ body {
   /*ナビゲーション天地中央揃え*/
   position: absolute;
   z-index: 999;
-  top: 50%;
+  top: 110px;
   left: 50%;
   transform: translate(-50%, -50%);
   a {
@@ -93,18 +93,51 @@ body {
   list-style: none;
   text-align: center;
 }
-.main__visual {
-  height: 720px;
-  margin-left: 363px;
-  position: relative;
-  overflow: hidden;
+.btn a {
+  padding: 15px 50px;
   border: 1px solid #ffffff;
+  font-weight: bold;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 250px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+  color: #ffffff;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    right: -7px;
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: -7px;
+    width: 1px;
+    height: 100%;
+    background-color: #ffffff;
+  }
+  &:hover {
+    background-color: #ffffff;
+    color: #ff2a2a;
+  }
+}
+.swiper {
+  height: 720px;
+  margin-left: 363px !important;
+  position: relative;
+  border: 1px solid #ffffff !important;
   img {
     height: 100%;
     object-fit: cover;
-    display: block;
     position: absolute;
-    animation: ChangeImage 10s infinite;
   }
   &::after {
     position: absolute;
@@ -114,19 +147,12 @@ body {
     left: 0;
     right: 0;
     box-shadow: 0 0 10px 15px #ffffff inset;
+    z-index: 3;
   }
-}
-.slide:nth-of-type(1) {
-  animation-delay: 0s;
-}
-.slide:nth-of-type(2) {
-  animation-delay: 5s;
-}
-.slide:nth-of-type(3) {
-  animation-delay: 10s;
 }
 .main__visual-text {
   position: absolute;
+  z-index: 2;
   top: 380px;
   left: 135px;
   p {

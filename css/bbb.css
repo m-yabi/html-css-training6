@@ -129,7 +129,7 @@ body {
 
 #header__menu {
   position: fixed;
-  z-index: 1;
+  z-index: 5;
   opacity: 0; /*はじめは透過0*/
   visibility: hidden;
   /*ナビの位置と形状*/
@@ -150,7 +150,7 @@ body {
   /*ナビゲーション天地中央揃え*/
   position: absolute;
   z-index: 999;
-  top: 50%;
+  top: 110px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -169,23 +169,56 @@ body {
   text-align: center;
 }
 
-.main__visual {
-  height: 720px;
-  margin-left: 363px;
-  position: relative;
-  overflow: hidden;
+.btn a {
+  padding: 15px 50px;
   border: 1px solid #ffffff;
+  font-weight: bold;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 250px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+  color: #ffffff;
 }
-.main__visual img {
+.btn a::before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  right: -7px;
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+}
+.btn a::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: -7px;
+  width: 1px;
+  height: 100%;
+  background-color: #ffffff;
+}
+.btn a:hover {
+  background-color: #ffffff;
+  color: #ff2a2a;
+}
+
+.swiper {
+  height: 720px;
+  margin-left: 363px !important;
+  position: relative;
+  border: 1px solid #ffffff !important;
+}
+.swiper img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  display: block;
   position: absolute;
-  -webkit-animation: ChangeImage 10s infinite;
-          animation: ChangeImage 10s infinite;
 }
-.main__visual::after {
+.swiper::after {
   position: absolute;
   content: "";
   top: 0;
@@ -193,25 +226,12 @@ body {
   left: 0;
   right: 0;
   box-shadow: 0 0 10px 15px #ffffff inset;
-}
-
-.slide:nth-of-type(1) {
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-}
-
-.slide:nth-of-type(2) {
-  -webkit-animation-delay: 5s;
-          animation-delay: 5s;
-}
-
-.slide:nth-of-type(3) {
-  -webkit-animation-delay: 10s;
-          animation-delay: 10s;
+  z-index: 3;
 }
 
 .main__visual-text {
   position: absolute;
+  z-index: 2;
   top: 380px;
   left: 135px;
 }

@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/bbb.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
     <title>Document</title>
   </head>
   <body>
@@ -15,22 +18,32 @@
       </h1>
       <div class="openbtn1"><span></span><span></span><span></span></div>
       <nav class="header__menu" id="header__menu">
+        <h1 class="header__logo">
+          <a href="#"> <img src="img/logo-w (1).svg" /></a>
+        </h1>
         <ul class="menu__items">
           <li class="menu__list"><a href="#reason">BBBが選ばれる理由</a></li>
-          <li class="menu__list"><a href="#voice"></a></li>
+          <li class="menu__list"><a href="#voice">受講生の声</a></li>
           <li class="menu__list"><a href="#overview">スクールの概要</a></li>
         </ul>
         <div class="btn"><a href="#">無料体験に申し込む</a></div>
       </nav>
     </header>
     <main>
-      <ul class="main__visual">
-        <li>
-          <img class="slide" src="img/mainvisual1 (2).jpg" alt="画像1" />
-        </li>
-        <li><img class="slide" src="img/mainvisual2 (1).jpg" alt="画像2" /></li>
-        <li><img class="slide" src="img/mainvisual3.jpg" alt="画像3" /></li>
-      </ul>
+      <!-- Slider main container -->
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/mainvisual1 (2).jpg" alt="画像1" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/mainvisual2 (1).jpg" alt="画像2" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/mainvisual3.jpg" alt="画像3" />
+          </div>
+        </div>
+      </div>
       <div class="main__visual-text">
         <p>話して学ぼう！</p>
         <p>BBB英会話スクール</p>
@@ -194,6 +207,8 @@
         <small>© BBB English School</small>
       </div>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
