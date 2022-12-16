@@ -3,6 +3,18 @@ $(function () {
     $(this).toggleClass("active");
     $("#header__menu").toggleClass("panelactive");
   });
+
+  $(".menu__list a").click(function () {
+    $(".openbtn1").removeClass("active");
+    $("#header__menu").removeClass("panelactive");
+  });
+
+  $(".reason__list1, .reason__list2").on("inview", function () {
+    $(this).addClass("fadein");
+  });
+  $(".student,.student1").on("inview", function () {
+    $(this).addClass("inview");
+  });
 });
 
 const swiper = new Swiper(".swiper", {
