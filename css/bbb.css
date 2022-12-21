@@ -290,7 +290,7 @@ body {
 @media (min-width: 901px) {
   .swiper {
     position: relative;
-    height: 720px;
+    height: 750px;
     margin-left: 250px !important;
   }
 }
