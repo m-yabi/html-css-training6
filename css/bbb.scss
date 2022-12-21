@@ -256,7 +256,7 @@ body {
     height: 67px;
   }
   @include sp {
-    margin: 10px 16px;
+    margin: 10px 16px 10px 0px;
   }
 }
 .btn1 {
@@ -458,7 +458,6 @@ body {
   position: relative;
   display: inline-block;
   padding: 20px;
-  max-width: 514px;
   color: #555;
   font-size: 16px;
   background: #e9f1fb;
@@ -466,10 +465,13 @@ body {
   p {
     font-size: 16px;
     letter-spacing: 1.6px;
+    @include sp {
+      text-align: center;
+    }
   }
   @include pc {
-    margin: 1.5em 0 1.5em 15px;
-    width: 100%;
+    margin: 1.5em 1.5em 15px;
+    max-width: 514px;
   }
   @include sp {
     margin: 0px 16px 30px 16px;
@@ -498,13 +500,13 @@ body {
   position: relative;
   display: inline-block;
   padding: 20px;
-  max-width: 514px;
   color: #555;
   font-size: 16px;
   background: #e9f1fb;
   border-radius: 15px;
   @include pc {
-    margin: 1.5em 15px 1.5em 15px;
+    margin: 1.5em 1.5em 15px;
+    max-width: 514px;
   }
   @include sp {
     margin: 40px 16px 30px 16px;
@@ -512,6 +514,9 @@ body {
   p {
     font-size: 16px;
     letter-spacing: 1.6px;
+    @include sp {
+      text-align: center;
+    }
   }
 }
 .student__text1:before {

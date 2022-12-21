@@ -379,7 +379,7 @@ body {
 }
 @media (max-width: 900px) {
   .main__visual-btn {
-    margin: 10px 16px;
+    margin: 10px 16px 10px 0px;
   }
 }
 
@@ -642,7 +642,6 @@ body {
   position: relative;
   display: inline-block;
   padding: 20px;
-  max-width: 514px;
   color: #555;
   font-size: 16px;
   background: #e9f1fb;
@@ -652,10 +651,15 @@ body {
   font-size: 16px;
   letter-spacing: 1.6px;
 }
+@media (max-width: 900px) {
+  .student__text p {
+    text-align: center;
+  }
+}
 @media (min-width: 901px) {
   .student__text {
-    margin: 1.5em 0 1.5em 15px;
-    width: 100%;
+    margin: 1.5em 1.5em 15px;
+    max-width: 514px;
   }
 }
 @media (max-width: 900px) {
@@ -693,7 +697,6 @@ body {
   position: relative;
   display: inline-block;
   padding: 20px;
-  max-width: 514px;
   color: #555;
   font-size: 16px;
   background: #e9f1fb;
@@ -702,7 +705,8 @@ body {
 @media (min-width: 901px) {
   .student__text1,
 .student__text2 {
-    margin: 1.5em 15px 1.5em 15px;
+    margin: 1.5em 1.5em 15px;
+    max-width: 514px;
   }
 }
 @media (max-width: 900px) {
@@ -715,6 +719,12 @@ body {
 .student__text2 p {
   font-size: 16px;
   letter-spacing: 1.6px;
+}
+@media (max-width: 900px) {
+  .student__text1 p,
+.student__text2 p {
+    text-align: center;
+  }
 }
 
 .student__text1:before {
